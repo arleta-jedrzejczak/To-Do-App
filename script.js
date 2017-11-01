@@ -1,11 +1,14 @@
+/*if script.js is in head section
 document.addEventListener("DOMContentLoaded", function(){
+    ALL CONTENT FROM SCRIPT.JS
+})*/
 
 //delete
-const list = document.querySelector('#list');
-list.addEventListener('click', function(e){
+const gut = document.querySelector('#gut');
+gut.addEventListener('click', function(e){
     if (e.target.className == 'but') {
         const li = e.target.parentElement;
-        list.removeChild(li);
+        gut.removeChild(li);
     }
 });
 
@@ -77,5 +80,3 @@ addForms.addEventListener('submit', function(e){
                 })
             }
         })
-        
-     })*/
