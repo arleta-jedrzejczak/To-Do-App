@@ -1,37 +1,193 @@
- @import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 body {
-    background: pink;
-    width: 50%;
-     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #4abdac;
 }
 
- h1 {
-     text-align: center;
-     font-family: 'Lobster', cursive;
-     font-size: 5em;
- }
+main {
+    background-color: #f7b733;
+    min-width: 50%;
+    font-size: 110%;
+    border: 3px solid #666;
+    border-radius: 10px;
+    box-shadow: 0 0 1em black;
+}
 
- .frame {
-     border: solid 1px black;
- }
+/*HEADER*/
+.header {
+    font-family: 'Lobster', serif;
+    font-size: 300%;
+}
 
- #tabbed-content li{
-     display: inline-block;
-     padding: 10px 14px;
-     background: #ddd;
-     border-radius: 4px;
-     cursor: pointer;
-     margin-right: 4px;
- }
+.header__name {
+    width: 100%;
+    padding: 2%;
+    margin: 2%;
+    text-align: center;
+    text-shadow: #fc4a1a 3px 1px 10px;
+}
 
- #tabbed-content .panel{
-     display: none;
-     border: 1px solid #ddd;
-     padding: 0 10px;
-     border-radius: 4px;
- }
+/*SEARCH FORM*/
+.search {
+    padding: 3%;
+}
+.search__input {
 
- #tabbed-content .panel.active{
+}
+
+/*LIST*/
+.list {
+    padding: 3%;
+}
+.list__item {
+    padding: 2%;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px dotted #666;
+}
+.list__name {
+    padding-right: 3%;
+    display: inline-flex;
+}
+.list__delete {
+    font-weight: 600;
+    display: inline-block;
+    padding: 5px 10px;
+    background: #fc4a1a;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.list__delete:hover {
+    box-shadow: inset 0 0 0 5px #4abdac;
+}
+.list__delete:active {
+    box-shadow: inset 0 0 0 5px #4abdac;
+}
+
+/*ADD*/
+.adding {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.adding__hide {
+    padding: 3%;
+}
+.adding__hide--item {
+    cursor: pointer;
+}
+.adding__write {
+    padding: 3%;
+}
+.adding__button {
+    font-weight: 600;
+    display: inline-block;
+    padding: 6px 10px;
+    background: #fc4a1a;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.adding__button:hover {
+    box-shadow: inset 0 0 0 5px #4abdac;
+}
+.adding__button:active {
+    box-shadow: inset 0 0 0 5px #4abdac;
+}
+
+/*TABS*/
+.tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 2%;
+}
+.tabs__button {
+    display: inline-block;
+    padding: 10px 14px;
+    background: #fc4a1a;
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 3%;
+    transition: all .3s ease-in-out;
+}
+.tabs__button:hover {
+    box-shadow: inset 0 0 0 5px #4abdac;
+}.tabs__button:active {
+    box-shadow: inset 0 0 0 5px #4abdac;
+}
+.tabs__item {
+    padding: 3%;
+}
+.tabs__item--name {
+    font-weight: 600;
+}
+.tabs__item--link {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    transition: all .3s ease-in-out;
+    display: inline-block;
+    padding: 5px 10px;
+    background: #4abdac;
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 3%;
+}
+.tabs__item--newlink {
+    text-decoration: none;
+    color: black;
+}
+.tabs__item--link:hover {
+    box-shadow: inset 0 0 0 5px #fc4a1a;
+}
+.tabs__item--link:active {
+    box-shadow: inset 0 0 0 5px #fc4a1a;
+}
+.tabs__item--text {
+    padding-top: 3%;
+    display: flex;
+}
+
+
+/*toggle class*/
+.panel {
+    margin: 3%;
+    margin-top: 0;
+    display: none;
+    border: 1px solid #666;
+    padding: 3%;
+    border-radius: 4px;
+}
+
+.panel.active{
     display: block;
- }
+}
+
+
+/*media queries*/
+@media (max-width: 768px) {
+    main {
+        width: 70%;
+        font-size: 110%;
+    }
+}
+
+@media (max-width: 575px) {
+
+    main {
+        width: 90%;
+        font-size: 120%;
+    }
+}

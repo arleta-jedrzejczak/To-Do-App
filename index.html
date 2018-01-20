@@ -1,61 +1,69 @@
 <!DOCTYPE html>
  <html lang="pl">
 	<head>
-		<meta charset="utf-8" />
-        <title>To Do</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>To Do Before Die</title>
+        <link href="reset.css" rel="stylesheet" type="text/css" />
         <link href="style.css" rel="stylesheet" type="text/css" />
 	</head>
     <body>
-        <header>
-            <h1>To Do List</h1>
-            <a href="http://de-code.it" target="_blank">De-Code IT!</a>
+
+        <header class="header">
+            <h1 class="header__name">To Do (Before You Die)</h1>
         </header>
 
-    <div class="frame">
-            <form id="search">
-                Search: <input type="text"/>
-            </form>
-
-        <div class="content">
-            <ul id="gut">
-                <li>
-                    <span class="name">Text 1</span>
-                    <button class="but">Delete</button>
-                </li>
-                <li>
-                    <span class="name">Text 2</span>
-                    <button class="but">Delete</button>
-                </li>
-                <li>
-                    <span class="name">Text 3</span>
-                    <button class="but">Delete</button>
-                </li>
-            </ul>
-        </div><!--end of content-->
-
-            <form id="add">
-                <input type="checkbox" id="hide" />
-                <label for="hide">Hide all items</label><br />
-                <input type="text" placeholder="Add position..."/>
-                <button>Add</button>
-            </form>
-
-            <div id="tabbed-content">
-                <ul class="tabs">
-                    <li data-target="#about" class="active">About</li>
-                    <li data-target="#contact">Contact</li>
+        <main>
+            <section>
+                <form id="search" class="search">
+                    Search: <input id="searcher" class="search__input" type="text"/>
+                </form>
+            </section>
+            <section>
+                <ul id="list" class="list">
+                    <li class="list__item">
+                        <span class="list__name">Eat a meal good enough to be your last.</span>
+                        <button class="list__delete">Done!</button>
+                    </li>
+                    <li class="list__item">
+                        <span class="list__name">Forgive someone.</span>
+                        <button class="list__delete">Done!</button>
+                    </li>
+                    <li class="list__item">
+                        <span class="list__name">Visit Napoli.</span>
+                        <button class="list__delete">Done!</button>
+                    </li>
                 </ul>
-            <div class="panel active" id="about">
-                <p>Content for about tab...</p>
-                <p>Lorem ipsum</p>
-            </div><!--end of about-->
-            <div class="panel" id="contact">
-                <p>Content for contact tab...</p>
-                <p>Lorem ipsum...</p>
-            </div><!--end of contact-->
+            </section>
+            <section>
+                <form id="addItem" class="adding">
+                    <div class="adding__hide">
+                        <input type="checkbox" id="hide" class="adding__hide--item"/>
+                        <label for="hide" class="adding__hide--item">Hide all items</label>
+                    <div class="adding__write">
+                        <input type="text" id="add" placeholder="Add position..."/>
+                        <button class="adding__button">Add</button>
+                    </div>
+                </form>
+            </section>
+            <section id="tabbed-content">
+                <ul class="tabs">
+                    <li data-target="#about" class="active tabs__button">About</li>
+                    <li data-target="#contact" class="tabs__button">Contact</li>
+                </ul>
+                <div class="panel active tabs__item" id="about">
+                    <p class="tabs__item--name">About me</p>
+                    <p class="tabs__item--text">Hello, my name is Arleta and I'm Front-End Developer wannabe.</p>
+                </div><!--end of about-->
+                <div class="panel tabs__item" id="contact">
+                    <p class="tabs__item--name">Contact</p>
+                    <p id="mail" class="tabs__item--link">Want to send me an e-mail?</p>
+                    <a href="https://github.com/laililang" target="_blank" class="tabs__item--link">Github</a>
+                    <a href="https://pl.linkedin.com/in/arleta-j%C4%99drzejczak-167345147" target="_blank" class="tabs__item--link">LinkedIn</a>
+                </div><!--end of contact-->
+            </section>
+        </main>
 
-          </div><!--end of tabbed content-->
-    </div><!--end of frame-->
     <script src="script.js"></script>
     </body>
  </html>

@@ -1,22 +1,17 @@
-/*if script.js is in head section
-document.addEventListener("DOMContentLoaded", function(){
-    ALL CONTENT FROM SCRIPT.JS
-})*/
-
 //delete
-const gut = document.querySelector('#gut');
-gut.addEventListener('click', function(e){
-    if (e.target.className == 'but') {
+const list = document.querySelector('#list');
+list.addEventListener('click', function(e){
+    if (e.target.className == 'list__delete') {
         const li = e.target.parentElement;
-        gut.removeChild(li);
+        list.removeChild(li);
     }
 });
 
 //add
-const addForms = document.forms['add'];
+const addForms = document.forms['addItem'];
 addForms.addEventListener('submit', function(e){
     e.preventDefault();
-    const val = addForms.querySelector('input[type="text"]').value;
+    const val = addForms.querySelector('#add').value;
 
 //create
     const li = document.createElement('li');
@@ -24,35 +19,36 @@ addForms.addEventListener('submit', function(e){
     const delBtn = document.createElement('button');
 
 //add content
-    delBtn.textContent = 'Delete';
+    delBtn.textContent = 'Done!';
     nameSpan.textContent = val;
 
 //add class
-    nameSpan.classList.add('name');
-    delBtn.classList.add('but');
+    li.classList.add('list__item');
+    nameSpan.classList.add('list__name');
+    delBtn.classList.add('list__delete');
 
 //append
     li.appendChild(nameSpan);
     li.appendChild(delBtn);
-    gut.appendChild(li)
+    list.appendChild(li);
 });
 
 //hide items
     const hideBox = document.querySelector("#hide");
     hide.addEventListener("change", function(e) {
         if(hideBox.checked == true) {
-            gut.style.display = "none";
+            list.style.display = "none";
         }
         else {
-            gut.style.display = "initial";
+            list.style.display = "initial";
         }
     });
 
 //search
-    const searchBar = document.forms["search"].querySelector("input");
+    const searchBar = document.forms["search"].querySelector("#searcher");
     searchBar.addEventListener("keyup", function(e) {
         const term = e.target.value.toLowerCase()
-        const items = gut.getElementsByTagName("li");
+        const items = list.getElementsByTagName("li");
         Array.from(items).forEach(function(item) {
             const title = item.firstElementChild.textContent;
             if(title.toLowerCase().indexOf(term) != -1) {
@@ -79,4 +75,15 @@ addForms.addEventListener('submit', function(e){
                     }
                 })
             }
+        })
+
+    //mail
+        const mail = document.querySelector("#mail");
+        const user = 'arleta.joanna.jedrzejczak';
+        const domain = 'gmail.com';
+        const subject = '?subject=Mail from portfolio';
+        const text = 'Nice, click please :)';
+        const all = ('<a class="tabs__item--newlink" hr' + 'ef="mai' + 'lto:' + user + '\x40' + domain + subject + '">' + text + '<'+'/a>');
+        mail.addEventListener("click", function(e){
+            e.target.innerHTML = all;
         })
