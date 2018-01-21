@@ -5,7 +5,18 @@ list.addEventListener('click', function(e){
         const li = e.target.parentElement;
         list.removeChild(li);
     }
+    let points = document.getElementById("list").getElementsByTagName("li").length;
+    const end =  document.querySelector('#end');
+    if(points < 1) {
+        end.classList.remove("visible");
+    }
 });
+
+//restart
+const reload = document.querySelector('#reload');
+reload.addEventListener("click", function(e){
+    window.location.reload();
+})
 
 //add
 const addForms = document.forms['addItem'];
@@ -81,7 +92,7 @@ addForms.addEventListener('submit', function(e){
         const mail = document.querySelector("#mail");
         const user = 'arleta.joanna.jedrzejczak';
         const domain = 'gmail.com';
-        const subject = '?subject=Mail from portfolio';
+        const subject = '?subject=Mail from To Do';
         const text = 'Nice, click please :)';
         const all = ('<a class="tabs__item--newlink" hr' + 'ef="mai' + 'lto:' + user + '\x40' + domain + subject + '">' + text + '<'+'/a>');
         mail.addEventListener("click", function(e){
