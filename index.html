@@ -6,8 +6,18 @@
         <title>To Do Before Die</title>
         <link href="reset.css" rel="stylesheet" type="text/css" />
         <link href="style.css" rel="stylesheet" type="text/css" />
+        <script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
 	</head>
     <body>
+
+        <div id="loader-wrapper" class="loader-wrapper">
+            <div class="load" id="load">
+                <hr/><hr/><hr/><hr/>
+            </div>
+        </div>
 
         <header class="header">
             <h1 class="header__name">To Do (Before You Die)</h1>
@@ -68,6 +78,11 @@
             </section>
         </main>
 
-    <script src="script.js"></script>
+        <script src="script.js"></script>
+        <script>
+            $(window).load(function() {
+                $("#loader-wrapper").fadeOut();
+            });
+        </script>
     </body>
  </html>
