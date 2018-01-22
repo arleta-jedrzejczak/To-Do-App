@@ -72,9 +72,16 @@ addForms.addEventListener('submit', function(e){
     });
 
     //tabbed content
+        let mail = document.querySelector("#mail");
+        const user = 'arleta.joanna.jedrzejczak';
+        const domain = 'gmail.com';
+        const subject = '?subject=Mail from To Do';
+        const text = 'e-mail';
+        const all = ('<a class="tabs__item--newlink" hr' + 'ef="mai' + 'lto:' + user + '\x40' + domain + subject + '">' + text + '<'+'/a>');
         const tabs = document.querySelector(".tabs");
         const panels = document.querySelectorAll(".panel");
         tabs.addEventListener("click", function(e){
+            mail.innerHTML = all;
             if(e.target.tagName == "LI"){
                 const targetPanel = document.querySelector(e.target.dataset.target);
                 Array.from(panels).forEach(function(panel){
@@ -86,15 +93,4 @@ addForms.addEventListener('submit', function(e){
                     }
                 })
             }
-        })
-
-    //mail
-        const mail = document.querySelector("#mail");
-        const user = 'arleta.joanna.jedrzejczak';
-        const domain = 'gmail.com';
-        const subject = '?subject=Mail from To Do';
-        const text = 'Nice, click please :)';
-        const all = ('<a class="tabs__item--newlink" hr' + 'ef="mai' + 'lto:' + user + '\x40' + domain + subject + '">' + text + '<'+'/a>');
-        mail.addEventListener("click", function(e){
-            e.target.innerHTML = all;
         })
